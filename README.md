@@ -1,6 +1,6 @@
 # Your Team Name Here
 
-This is the team repository for <Team 1>
+This is the team repository for Team 1
 
 ## Project
 
@@ -18,8 +18,8 @@ Team details follow
 
 ### 495 Students 
 
-Brian French
-Fabian Abarca
+**Brian French**
+**Fabian Abarca**
 
 ### 394 Students
 
