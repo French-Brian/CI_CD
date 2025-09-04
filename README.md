@@ -1,6 +1,6 @@
 # Your Team Name Here
 
-This is the team repository for <your team name here>
+This is the team repository for <Team 1>
 
 ## Project
 
@@ -18,7 +18,8 @@ Team details follow
 
 ### 495 Students 
 
-495 student name here
+Brian French
+Fabian Abarca
 
 ### 394 Students
 
