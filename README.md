@@ -47,10 +47,10 @@ Team details follow
 
 ## Prerequisites
 **IDE**  [Visual Studio Code](https://code.visualstudio.com/download)
-|**Front End**|**Back End**|
-|-|-|
-|![React](https://img.shields.io/badge/React-white?logo=react) ![React](https://img.shields.io/badge/tailwindcss-white?logo=tailwindcss)|![Node.js](https://img.shields.io/badge/Node.js-white?logo=node.js) ![Supabase](https://img.shields.io/badge/Supabase-white?logo=Supabase)
- 
+|**Front End**|**Back End**|**Frame work**|
+|-|-|-|
+|![React](https://img.shields.io/badge/React-white?logo=react) ![tailwind](https://img.shields.io/badge/tailwindcss-white?logo=tailwindcss)|![Node.js](https://img.shields.io/badge/Node.js-white?logo=node.js) ![Supabase](https://img.shields.io/badge/Supabase-white?logo=Supabase)
+|![vite](https://img.shields.io/badge/vite-white?logo=vite)|
 ## Set Up and Installation
 Download and install VSCode [Here](https://code.visualstudio.com/download)
 
