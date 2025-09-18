@@ -58,9 +58,7 @@ Download and install Node.js [Here](https://www.nodejs.tech/ro/download)
 
 Follow install for React [Here](https://react.dev/learn/editor-setup)
 
-Recomended Extentions for VSCODE 
- + React Native Tools-mirosoft
- + VS Code ESLint extension- mirosoft 	
- + Tailwind CSS IntelliSense- tailwindlabs
-
-
+Recommended Extensions for VSCODE 
+ + React Native Tools-microsoft
+ + VS Code ESLint extension- microsoft 	
+ + Tailwind CSS IntelliSense- tailwindcss
