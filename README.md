@@ -1,4 +1,4 @@
- # Your Team Name Here
+ # Team 1 - Mane Event
 
 This is the team repository for Team 1
 
