@@ -1,0 +1,59 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.card {
+  padding: 2em;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Style the buttons directly */
+button.primary {
+  background-color: #2b6150;
+  color: white;
+  border: none;
+  padding: 0.75em 1.5em;
+  font-size: 1.2em;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 0.5em;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+button.primary:hover {
+  background-color: #3a7d66;
+}
+
+button.primary:active {
+  transform: scale(0.98);
+}
+
+button.primary:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(43, 97, 80, 0.5);
+}
+
+.text-input {
+  width: 100%;
+  padding: 0.75em;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 0.5em 0;
+  box-sizing: border-box;
+}
+.text-input:focus {
+  border-color: #2b6150;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(43, 97, 80, 0.5);
+}
+.label {
+  color: #2b6150;
+}
