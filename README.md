@@ -89,29 +89,27 @@ Team details follow
 
 ### 2. Get the Project Code
 
-#### e. Clone the team repository
+**e. Clone the team repository**
 - In VS Code press Ctrl+Shift+P → type "Git: Clone" → Enter.
 - Paste the repository URL: https://github.com/FranklinUniversityCompSciPracticum/Fall_2025_Team1_Repo.git
 - Choose a folder (e.g., Documents or dev).
 - When VS Code asks, click Open to open the cloned folder.
-<br><br>
+<br>
 
 ### 3. Install & Run the App
 
-#### f. Install project dependencies (inside the app folder)
+**f. Install project dependencies (inside the app folder)**
 - In the VS Code terminal run these commands:
-<br>
-- cd Fall_2025_Team1_Repo
-- cd ManeEvent
-- npm install
-<br>
+* cd Fall_2025_Team1_Repo
+* cd ManeEvent
+* npm install
 - This downloads everything the app needs (React, Vite, TailwindCSS, etc.).
 <br>
 #### g. Start the dev server.
 - In the VS Code terminal run the command in the app folder:
-<br>
-- npm run dev
-<br>
+
+* npm run dev
+
 - Click the link that appears in the terminal (usually http://localhost:5173).
 - You should see the Main Event landing page with Login and Join. 
 
