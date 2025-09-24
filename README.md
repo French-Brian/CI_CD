@@ -81,7 +81,7 @@ Team details follow
 - Close and reopen VS Code so it picks up Node/npm.
 
 **d. Optional: To verify Node/npm was installed correctly.**
-- In VS Code, go to Terminal → New Terminal, then run:/
+- In VS Code, go to Terminal → New Terminal, then run:
   
 node -v
 
@@ -103,13 +103,17 @@ npm -v
 
 **f. Install project dependencies (inside the app folder)**
 - In the VS Code terminal run these commands:
-* cd Fall_2025_Team1_Repo
-* cd ManeEvent
-* npm install
+  
+cd Fall_2025_Team1_Repo
+
+cd ManeEvent
+
+npm install
+
 - This downloads everything the app needs (React, Vite, TailwindCSS, etc.).
-<br>
+  
 **g. Start the dev server.**
-- In the VS Code terminal run the command in the app folder:/
+- In the VS Code terminal run the command in the app folder:
 
 npm run dev
 
