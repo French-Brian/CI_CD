@@ -121,7 +121,7 @@ npm run dev
 - You should see the Main Event landing page with Login and Join. 
 
 --- 
-##Extensions and Dependencies
+## Extensions and Dependencies
 
 Recommended Extensions for VSCODE (all the necessary extensions should be added to the project when you run the command "npm install"):
 
