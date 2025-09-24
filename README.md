@@ -121,8 +121,9 @@ npm run dev
 - You should see the Main Event landing page with Login and Join. 
 
 --- 
+##Extensions and Dependencies
 
-Recommended Extensions for VSCODE (all these extensions get added to the project when you run the command "npm install"
+Recommended Extensions for VSCODE (all the necessary extensions should be added to the project when you run the command "npm install"):
 
 - React Native Tools- Microsoft
 - VS Code ESLint extension- Microsoft
@@ -130,7 +131,7 @@ Recommended Extensions for VSCODE (all these extensions get added to the project
 - JavaScript and TypeScript Nightly - Microsoft
 - Prettier - Code formatter - prettier.io
 
-devDependencies/ Versions 
+devDependencies/ Versions (These versions work well with each other):
 - Vscode: v1.104.1
 - node.js: v22.14.0
 - npm: v11.6.0
