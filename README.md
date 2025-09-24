@@ -113,7 +113,7 @@ npm install
 - This downloads everything the app needs (React, Vite, TailwindCSS, etc.).
   
 **g. Start the dev server.**
-- In the VS Code terminal run the command in the app folder:
+- In the VS Code terminal run the command in the ManeEvent folder:
 
 npm run dev
 
