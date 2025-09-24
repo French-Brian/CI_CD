@@ -63,28 +63,75 @@ Team details follow
 |![React](https://img.shields.io/badge/React-white?logo=react) ![tailwind](https://img.shields.io/badge/tailwindcss-white?logo=tailwindcss)|![Node.js](https://img.shields.io/badge/Node.js-white?logo=node.js) ![Supabase](https://img.shields.io/badge/Supabase-white?logo=Supabase)
 |![vite](https://img.shields.io/badge/vite-white?logo=vite)|
 
-## Set Up and Installation
+## Get Started
 
-devDependencies/ Versions
-Vscode: v1.104.1
-node.js: v22.14.0
-npm: v11.6.0
-npx: v11.6.0 - installed with npm
-js: 9.33.0
-react: 19.0.0
-tailwindcss: 3.4.17,
-vite: 7.1.2
+1. Software Setup & Installation
 
-Download and install VSCode [Here](https://code.visualstudio.com/download)
+a. Install Visual Studio Code [Here](https://code.visualstudio.com/download)
+Download and install VS Code. Open it when done.
 
-Download and install Node.js [Here](https://www.nodejs.org)
+b. Install Node.js [Here](https://www.nodejs.org) (includes Node's Package Manager (npm))
+Download and install the LTS version of Node.js. Accept the defaults. 
 
-Follow install for React [Here](https://react.dev/learn/editor-setup)
+c. Restart VS Code
+Close and reopen VS Code so it picks up Node/npm.
 
-Recommended Extensions for VSCODE
+d. Optional: To verify Node/npm was installed correctly.
+In VS Code, go to Terminal → New Terminal, then run:
+
+node -v
+npm -v
+
+You should see version numbers (e.g., v22.x, 10.x/11.x).
+
+
+2. Get the Project Code
+
+e. Clone the team repository
+In VS Code press Ctrl+Shift+P → type "Git: Clone" → Enter.
+Paste the repository URL: https://github.com/FranklinUniversityCompSciPracticum/Fall_2025_Team1_Repo.git
+Choose a folder (e.g., Documents or dev).
+When VS Code asks, click Open to open the cloned folder.
+
+
+3. Install & Run the App
+
+g. Install project dependencies (inside the app folder)
+In the VS Code terminal run these commands:
+
+cd Fall_2025_Team1_Repo
+cd ManeEvent
+npm install
+
+This downloads everything the app needs (React, Vite, TailwindCSS, etc.).
+
+h. Start the dev server.
+In the VS Code terminal run the command in the app folder:
+
+npm run dev
+
+Click the link that appears in the terminal (usually http://localhost:5173).
+You should see the Main Event landing page with Login and Join. 
+
+
+
+Recommended Extensions for VSCODE (all these extensions get added to the project when you run the command "npm install"
 
 - React Native Tools- Microsoft
 - VS Code ESLint extension- Microsoft
 - Tailwind CSS IntelliSense- tailwindcss
 - JavaScript and TypeScript Nightly - Microsoft
 - Prettier - Code formatter - prettier.io
+
+devDependencies/ Versions 
+- Vscode: v1.104.1
+- node.js: v22.14.0
+- npm: v11.6.0
+- npx: v11.6.0 - installed with npm
+- js: 9.33.0
+- react: 19.0.0
+- tailwindcss: 3.4.17,
+- vite: 7.1.2
+
+If something goes wrong with React installation, you can also download the newest version:
+Follow install for React [Here](https://react.dev/learn/editor-setup)
