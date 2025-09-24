@@ -81,9 +81,12 @@ Team details follow
 - Close and reopen VS Code so it picks up Node/npm.
 
 **d. Optional: To verify Node/npm was installed correctly.**
-- In VS Code, go to Terminal → New Terminal, then run:
-* node -v
-* npm -v
+- In VS Code, go to Terminal → New Terminal, then run:/
+  
+node -v
+
+npm -v
+
 - You should see version numbers (e.g., v22.x, 10.x/11.x).
 <br>
 
@@ -105,10 +108,10 @@ Team details follow
 * npm install
 - This downloads everything the app needs (React, Vite, TailwindCSS, etc.).
 <br>
-#### g. Start the dev server.
-- In the VS Code terminal run the command in the app folder:
+**g. Start the dev server.**
+- In the VS Code terminal run the command in the app folder:/
 
-* npm run dev
+npm run dev
 
 - Click the link that appears in the terminal (usually http://localhost:5173).
 - You should see the Main Event landing page with Login and Join. 
