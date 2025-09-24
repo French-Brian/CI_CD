@@ -72,22 +72,20 @@ Team details follow
 ### 1) Software Setup
 
 **a. Install Visual Studio Code [Here](https://code.visualstudio.com/download)**
-Download and install VS Code. Open it when done.
+- Download and install VS Code. Open it when done.
 
 **b. Install Node.js [Here](https://www.nodejs.org) (includes Node's Package Manager (npm))**
-Download and install the LTS version of Node.js. Accept the defaults. 
+- Download and install the LTS version of Node.js. Accept the defaults. 
 
-#### c. Restart VS Code
+**c. Restart VS Code**
 - Close and reopen VS Code so it picks up Node/npm.
-<br>
-#### d. Optional: To verify Node/npm was installed correctly.
+
+**d. Optional: To verify Node/npm was installed correctly.**
 - In VS Code, go to Terminal → New Terminal, then run:
-<br>
-- node -v
-- npm -v
-<br>
+-- node -v
+-- npm -v
 - You should see version numbers (e.g., v22.x, 10.x/11.x).
-<br><br>
+<br>
 
 ### 2. Get the Project Code
 
