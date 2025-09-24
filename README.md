@@ -67,10 +67,11 @@ Team details follow
 
 ## Get Started
 
-1. Software Setup & Installation
+### 1. Software Setup & Installation
 
 a. Install Visual Studio Code [Here](https://code.visualstudio.com/download)
 - Download and install VS Code. Open it when done.
+
 
 b. Install Node.js [Here](https://www.nodejs.org) (includes Node's Package Manager (npm))
 - Download and install the LTS version of Node.js. Accept the defaults. 
