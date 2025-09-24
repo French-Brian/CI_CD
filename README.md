@@ -42,18 +42,20 @@ Allowing mobile stylists, salon suites, and beauty professionals a direct connec
 
 Team details follow
 
-### 495 Students
+### 495 Students - Project Managers
 
 - **Brian French**
 - **Fabian Abarca**
 
-### 394 Students
+### 394 Students - Lead Developers
 
-394 Student(s) here
+- **Abdullah Ibrahim**
+- **John Phan**
 
-### 294 Students
+### 294 Students - Junior Developers
 
-294 Student(s) here
+- **Ava Rose**
+- **Liam Hansen**
 
 ## Prerequisites
 
@@ -68,50 +70,50 @@ Team details follow
 1. Software Setup & Installation
 
 a. Install Visual Studio Code [Here](https://code.visualstudio.com/download)
-Download and install VS Code. Open it when done.
+- Download and install VS Code. Open it when done.
 
 b. Install Node.js [Here](https://www.nodejs.org) (includes Node's Package Manager (npm))
-Download and install the LTS version of Node.js. Accept the defaults. 
+- Download and install the LTS version of Node.js. Accept the defaults. 
 
 c. Restart VS Code
-Close and reopen VS Code so it picks up Node/npm.
+- Close and reopen VS Code so it picks up Node/npm.
 
 d. Optional: To verify Node/npm was installed correctly.
-In VS Code, go to Terminal → New Terminal, then run:
-
-node -v
-npm -v
-
-You should see version numbers (e.g., v22.x, 10.x/11.x).
+- In VS Code, go to Terminal → New Terminal, then run:
+-
+- node -v
+- npm -v
+-
+- You should see version numbers (e.g., v22.x, 10.x/11.x).
 
 
 2. Get the Project Code
 
 e. Clone the team repository
-In VS Code press Ctrl+Shift+P → type "Git: Clone" → Enter.
-Paste the repository URL: https://github.com/FranklinUniversityCompSciPracticum/Fall_2025_Team1_Repo.git
-Choose a folder (e.g., Documents or dev).
-When VS Code asks, click Open to open the cloned folder.
+- In VS Code press Ctrl+Shift+P → type "Git: Clone" → Enter.
+- Paste the repository URL: https://github.com/FranklinUniversityCompSciPracticum/Fall_2025_Team1_Repo.git
+- Choose a folder (e.g., Documents or dev).
+- When VS Code asks, click Open to open the cloned folder.
 
 
 3. Install & Run the App
 
 g. Install project dependencies (inside the app folder)
-In the VS Code terminal run these commands:
-
-cd Fall_2025_Team1_Repo
-cd ManeEvent
-npm install
-
-This downloads everything the app needs (React, Vite, TailwindCSS, etc.).
+- In the VS Code terminal run these commands:
+-
+- cd Fall_2025_Team1_Repo
+- cd ManeEvent
+- npm install
+-
+- This downloads everything the app needs (React, Vite, TailwindCSS, etc.).
 
 h. Start the dev server.
-In the VS Code terminal run the command in the app folder:
-
-npm run dev
-
-Click the link that appears in the terminal (usually http://localhost:5173).
-You should see the Main Event landing page with Login and Join. 
+- In the VS Code terminal run the command in the app folder:
+-
+- npm run dev
+-
+- Click the link that appears in the terminal (usually http://localhost:5173).
+- You should see the Main Event landing page with Login and Join. 
 
 
 
