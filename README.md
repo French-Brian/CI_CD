@@ -82,8 +82,8 @@ Team details follow
 
 **d. Optional: To verify Node/npm was installed correctly.**
 - In VS Code, go to Terminal → New Terminal, then run:
--- node -v
--- npm -v
+* node -v
+* npm -v
 - You should see version numbers (e.g., v22.x, 10.x/11.x).
 <br>
 
