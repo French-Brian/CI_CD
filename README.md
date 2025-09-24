@@ -65,58 +65,59 @@ Team details follow
 |![React](https://img.shields.io/badge/React-white?logo=react) ![tailwind](https://img.shields.io/badge/tailwindcss-white?logo=tailwindcss)|![Node.js](https://img.shields.io/badge/Node.js-white?logo=node.js) ![Supabase](https://img.shields.io/badge/Supabase-white?logo=Supabase)
 |![vite](https://img.shields.io/badge/vite-white?logo=vite)|
 
+---
+
 ## Get Started
 
 ### 1. Software Setup & Installation
 
 a. Install Visual Studio Code [Here](https://code.visualstudio.com/download)
 - Download and install VS Code. Open it when done.
-
-
+<br>
 b. Install Node.js [Here](https://www.nodejs.org) (includes Node's Package Manager (npm))
 - Download and install the LTS version of Node.js. Accept the defaults. 
-
+<br>
 c. Restart VS Code
 - Close and reopen VS Code so it picks up Node/npm.
-
+<br>
 d. Optional: To verify Node/npm was installed correctly.
 - In VS Code, go to Terminal → New Terminal, then run:
-
+<br>
 - node -v
 - npm -v
-
+<br>
 - You should see version numbers (e.g., v22.x, 10.x/11.x).
+<br><br>
 
-
-2. Get the Project Code
+### 2. Get the Project Code
 
 e. Clone the team repository
 - In VS Code press Ctrl+Shift+P → type "Git: Clone" → Enter.
 - Paste the repository URL: https://github.com/FranklinUniversityCompSciPracticum/Fall_2025_Team1_Repo.git
 - Choose a folder (e.g., Documents or dev).
 - When VS Code asks, click Open to open the cloned folder.
+<br><br>
 
-
-3. Install & Run the App
+### 3. Install & Run the App
 
 g. Install project dependencies (inside the app folder)
 - In the VS Code terminal run these commands:
-
+<br>
 - cd Fall_2025_Team1_Repo
 - cd ManeEvent
 - npm install
-
+<br>
 - This downloads everything the app needs (React, Vite, TailwindCSS, etc.).
-
+<br>
 h. Start the dev server.
 - In the VS Code terminal run the command in the app folder:
-
+<br>
 - npm run dev
-
+<br>
 - Click the link that appears in the terminal (usually http://localhost:5173).
 - You should see the Main Event landing page with Login and Join. 
 
-
+--- 
 
 Recommended Extensions for VSCODE (all these extensions get added to the project when you run the command "npm install"
 
