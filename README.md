@@ -40,8 +40,6 @@ Allowing mobile stylists, salon suites, and beauty professionals a direct connec
 
 ## Team
 
-Team details follow
-
 ### 495 Students - Project Managers
 
 - **Brian French**
