@@ -1,17 +1,27 @@
 import React from "react";
 import Footer from "./footer";
 import Header from "./header";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Registration() {
-  const navigate = useNavigate();
-  const goback = () => {
-    navigate("/");
-  };
+  // will use later const navigate = useNavigate();
+
   return (
     <>
-      <div>
-        <div>Registration Page</div>
+      <div
+        className="card"
+        style={{
+          width: "300px",
+          height: "300px",
+          overflow: "hidden",
+          borderRadius: "10px",
+          boxShadow: "0 4px 8px rgba(0, 0, 0, 0.5)",
+          position: "relative",
+        }}
+      >
+        <p>Registration Page</p>
+
         <form>
           <p>
             <label className="label">Enter a username: </label>
@@ -37,14 +47,14 @@ function Registration() {
           </p>
           <div className="buttons">
             <button className="primary">Submit</button>
-            <button className="primary" onClick={goback}>
-              Cancel
-            </button>
+            <Link to="/">
+              <button className="primary">Cancel</button>
+            </Link>
           </div>
         </form>
-
-        <Footer />
       </div>
+
+      <Footer />
     </>
   );
 }
