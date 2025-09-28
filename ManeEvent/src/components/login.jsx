@@ -2,13 +2,12 @@ import "../App.css";
 import React from "react";
 import logo from "../assets/lightLogo_800X800.png";
 import Footer from "../components/footer";
-import { useNavigate } from "react-router-dom";
+// will use later import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Login() {
-  const navigate = useNavigate();
-  const goback = () => {
-    navigate("/");
-  };
+  // will use latter const navigate = useNavigate();
+
   return (
     <>
       <div
@@ -31,9 +30,9 @@ function Login() {
           <input placeholder="Password" id="password"></input>
           <div className="buttons">
             <button className="primary">Submit</button>
-            <button className="primary" onClick={goback}>
-              cancel
-            </button>
+            <Link to="/">
+              <button className="primary">cancel</button>
+            </Link>
           </div>
         </form>
       </div>
