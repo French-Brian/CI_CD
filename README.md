@@ -38,6 +38,20 @@ Mane Event
 
 Mane Event is a web app that connects customers with beauty professionals (stylists, barbers, nail techs, makeup artists). Customers can discover services, see real-time availability, book appointments, pay securely, and leave ratings. Providers can publish profiles, list services and pricing, manage schedules, and receive bookings in one place.
 
+### Project Scope
+
+* Scope Statement (MVP) (example)
+* In Scope (MVP):
+* Accounts with email verification (Customer/Provider/Admin)
+* Provider profiles (photo, bio, services, pricing)
+* Service search with basic filters
+* Availability & scheduling (no double-booking)
+* Booking cart → checkout → payment → confirmation
+* Appointments history (view/update/cancel within policy)
+* Basic provider console (manage services/availability)
+* Basic admin view (users, providers, services, bookings)
+* Email confirmations
+
 ## Team
 
 ### 495 Students - Project Managers
