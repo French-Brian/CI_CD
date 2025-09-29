@@ -36,7 +36,7 @@ Mane Event
 
 ### Project Description
 
-Allowing mobile stylists, salon suites, and beauty professionals a direct connection to advertise services in the beauty and grooming industry and build a name for themselves. Connects customers with new services available to them.
+Mane Event is a web app that connects customers with beauty professionals (stylists, barbers, nail techs, makeup artists). Customers can discover services, see real-time availability, book appointments, pay securely, and leave ratings. Providers can publish profiles, list services and pricing, manage schedules, and receive bookings—all in one place.
 
 ## Team
 
@@ -47,7 +47,6 @@ Allowing mobile stylists, salon suites, and beauty professionals a direct connec
 
 ### 394 Students - Lead Developers
 
-- **Abdullah Ibrahim**
 - **John Phan**
 
 ### 294 Students - Junior Developers
