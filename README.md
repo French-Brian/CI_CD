@@ -36,7 +36,7 @@ Mane Event
 
 ### Project Description
 
-Mane Event is a web app that connects customers with beauty professionals (stylists, barbers, nail techs, makeup artists). Customers can discover services, see real-time availability, book appointments, pay securely, and leave ratings. Providers can publish profiles, list services and pricing, manage schedules, and receive bookings—all in one place.
+Mane Event is a web app that connects customers with beauty professionals (stylists, barbers, nail techs, makeup artists). Customers can discover services, see real-time availability, book appointments, pay securely, and leave ratings. Providers can publish profiles, list services and pricing, manage schedules, and receive bookings in one place.
 
 ## Team
 
