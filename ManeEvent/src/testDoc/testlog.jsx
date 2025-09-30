@@ -1,44 +1,69 @@
 import React from "react";
 import { useState } from "react";
-import { supabase } from "../backend/supabase/supabase_client";
-const TestLog = () => {
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  };
-  return (
-    <div
-      className="testDoc"
-      style={{
-        margin: "20px",
-        border: "2px solid black",
-        padding: "10px",
-        borderRadius: "5px",
-        backgroundColor: "#f9f9f9",
-      }}
-    >
-      <form>
-        <h3>Test Documentation</h3>
-        <label htmlFor="testItem">Item tested: </label>
-        <input id="log" name="testItem" placeholder="Item Tested"></input>
-        <br />
-        <label htmlFor="tstStatus">Item status: </label>
-        <input id="log" name="tstStatus" placeholder="Test status "></input>
-        <br />
-        <label htmlFor="fixstat">Fix needed: </label>
-        <input id="log" name="fixstat" placeholder="Fix needed"></input> <br />
-        <label htmlFor="gitT">GitTicket: </label>
-        <input id="log" name="gitT" placeholder="GitTicket"></input> <br />
-        <label htmlFor="log">Test Log: </label>
-        <textarea
-          id="log"
-          name="log"
-          placeholder="Enter your test log here..."
-        ></textarea>
-        <br />
-        <button type="submit">Submit</button>
-      </form>{" "}
-    </div>
-  );
-};
+import Supabase from "../backend/supabase/supabaseClient";
 
+function TestLog() {
+  const [setItemTested] = useState("");
+  const [setFixNeeded] = useState("");
+  const [setComments] = useState("");
+
+  const setTestLog = (event) => {
+    event.preventDefault();
+    const testLog = document.getElementById("testLog");
+    const data = testLog.elements;
+    const testLogData = {
+      itemTested: data.itemTested.value,
+      fixNeeded: data.fixNeeded.value,
+      comments: data.comments.value,
+    };
+    console.log(testLogData);
+    sendtoDB(testLogData);
+    testLog.reset();
+  };
+  async function sendtoDB(testLogData) {
+    const { data, error } = await Supabase.from("testDocs").insert([
+      {
+        //set vlaues for the columns in the table
+        itemTested: testLogData.itemTested,
+        fixNeeded: testLogData.fixNeeded,
+        comments: testLogData.comments,
+      },
+    ]);
+    if (error) {
+      console.log("Error inserting data:", error);
+    } else {
+      console.log("Data inserted successfully:", data);
+    }
+  }
+
+  return (
+    <>
+      <div>
+        <h2>Test Log </h2>
+        <form id="testLog" onSubmit={setTestLog}>
+          <label>Item tested: </label>
+          <input
+            id="itemTested"
+            onChange={(e) => setItemTested(e.target.value)}
+          ></input>{" "}
+          <br />
+          <label>Fix needed: </label>
+          <input
+            id="fixNeeded"
+            onChange={(e) => setFixNeeded(e.target.value)}
+          ></input>{" "}
+          <br />
+          <label>Comments: </label>
+          <textarea
+            id="comments"
+            placeholder="Document Test"
+            onChange={(e) => setComments(e.target.value)}
+          ></textarea>{" "}
+          <br />
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </>
+  );
+}
 export default TestLog;
