@@ -1,24 +1,26 @@
 import React from "react";
-import { useState } from "react";
+
 import Supabase from "../backend/supabase/supabaseClient";
 import Pop_up from "./pop_up";
 
 function TestLog() {
   //set the state for each input feild to blank to watch for changes
-  const [setItemTested] = useState("");
-  const [setFixNeeded] = useState("");
-  const [setComments] = useState("");
+
   //event to what for the form to change
   const setTestLog = (event) => {
     event.preventDefault();
     //gets the from the DOM by element ID and sets the values to the testLogData object line 46-67
     const testLog = document.getElementById("testLog");
-    //dot notiation for childen elements of the form
-    const data = testLog.elements;
+    var fixMade = false;
+    if (testLog.fixNeeded.value.trim().toUpperCase() === "NO") {
+      fixMade = true;
+    }
+
     const testLogData = {
-      itemTested: data.itemTested.value,
-      fixNeeded: data.fixNeeded.value,
-      comments: data.comments.value,
+      itemTested: testLog.itemTested.value,
+      fixNeeded: testLog.fixNeeded.value,
+      comments: testLog.comments.value,
+      fixMade: fixMade,
     };
     //console.log(testLogData); // uncomment console.log(testLogData) for testing purposes prints the data in the web console use f12 to view in browser
     sendtoDB(testLogData); //calls the function to send the data to the database
@@ -42,6 +44,7 @@ function TestLog() {
         itemTested: testLogData.itemTested,
         fixNeeded: testLogData.fixNeeded,
         comments: testLogData.comments,
+        fixMade: testLogData.fixMade,
       },
     ]);
     if (error) {
@@ -62,28 +65,18 @@ function TestLog() {
         <form id="testLog" onSubmit={setTestLog}>
           <label>
             Item tested:
-            <input
-              id="itemTested"
-              onChange={(e) => setItemTested(e.target.value)} //watch for changes in the input feild
-            ></input>
-          </label>{" "}
+            <input id="itemTested"></input>
+          </label>
           <br />
           <label>
             Fix needed:
-            <input
-              id="fixNeeded"
-              onChange={(e) => setFixNeeded(e.target.value)}
-            ></input>{" "}
-          </label>{" "}
+            <input id="fixNeeded"></input>
+          </label>
           <br />
           <label for="comments">Comments: </label>
-          <textarea
-            id="comments"
-            placeholder="Document Test"
-            onChange={(e) => setComments(e.target.value)}
-          ></textarea>{" "}
+          <textarea id="comments" placeholder="Document Test"></textarea>
           <br />
-          <button type="submit">Submit</button>{" "}
+          <button type="submit">Submit Test Doc</button> <hr />
           {/** No onclick when inside form submit, submit though onSubmit of form*/}
         </form>
       </div>

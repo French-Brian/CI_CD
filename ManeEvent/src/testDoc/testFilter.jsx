@@ -6,26 +6,28 @@ import Supabase from "../backend/supabase/supabaseClient";
 it will want to keep importing these import { supabase } from "../backend/supabase/supabaseClient";
 import { client} from "@supabase/supabase-js"; this is what the Supabse from /backend/supabase/supabaseClient  comes in as*/
 
-function TestGetLogs() {
-  const [logs, setLogs] = useState([]); //state to hold the logs from the database
-  const [error, setError] = useState(null); //state to hold any error that occurs during fetching
-  const [showLogs, setShowLogs] = useState(false); //state to control the visibility of logs
+function TestFilter() {
+  const [data, setdata] = useState([]);
+  const [error, setError] = useState(null);
+  const [filterdata, setfilterdata] = useState(false);
 
-  async function getLogs() {
-    const { data, error } = await Supabase.from("testDocs").select(); //select all from the testDocs table
+  async function getdata() {
+    const { data, error } = await Supabase.from("testDocs")
+      .select()
+      .filter("fixNeeded", "eq", "yes"); //filter where fixNeeded is equal to true
     if (error) {
       setError(error);
     } else {
-      setLogs(data); //changes the state of the log basically logs = data returned from supabase
+      setdata(data);
 
-      setShowLogs(true); //show the logs when fetched
+      setfilterdata(true);
     }
   }
 
   function mapdata() {
     return (
       <table>
-        {/*table is hidden until the state of logs is changed  when hidden state is false,  table is triggered when state of log const is changed*/}
+        {/*table is hidden until the state of data is changed  when hidden state is false,  table is triggered when state of log const is changed*/}
         <thead>
           <tr>
             <th>Item Tested</th>
@@ -37,7 +39,7 @@ function TestGetLogs() {
         <tbody
           style={{ border: "1px solid black", outline: "1px solid black" }}
         >
-          {logs.map((log) => (
+          {data.map((log) => (
             <tr
               key={log.id}
               style={{ border: "1px solid black", outline: "1px solid black" }}
@@ -54,26 +56,25 @@ function TestGetLogs() {
 
   return (
     <div>
-      <button onClick={getLogs}>Show Logs</button>
-
+      <button onClick={getdata}>Search data</button>
       {/*Triggers the getlog function line 14*/}
-      {showLogs ? ( //if showlogs state is true show else show  object form mapdata.
+      {filterdata ? ( //if filterdata state is true show else show  object form mapdata.
         <div>
           <button
             onClick={() => {
-              setShowLogs(false); // changes state of show log to false which hides the logs
+              setfilterdata(false); // changes state of show log to false which hides the data
             }}
           >
-            Hide Logs
+            Hide data
           </button>
-          <p>Logs from Database:</p>
+          <p>Filiterd data from db where fix equal to yes:</p>
           {mapdata()}
         </div>
       ) : (
-        //if showlogs is false indicating an error occurred
+        //if filterdata is false indicating an error occurred
         error && <p>Error: {error.message}</p> //display error if the error state is not null else do nothing
       )}
     </div>
   );
 }
-export default TestGetLogs;
+export default TestFilter;
