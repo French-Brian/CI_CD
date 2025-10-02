@@ -60,19 +60,23 @@ function TestLog() {
       <div>
         <h2>Test Log </h2>
         <form id="testLog" onSubmit={setTestLog}>
-          <label>Item tested: </label>
-          <input
-            id="itemTested"
-            onChange={(e) => setItemTested(e.target.value)} //watch for changes in the input feild
-          ></input>{" "}
+          <label>
+            Item tested:
+            <input
+              id="itemTested"
+              onChange={(e) => setItemTested(e.target.value)} //watch for changes in the input feild
+            ></input>
+          </label>{" "}
           <br />
-          <label>Fix needed: </label>
-          <input
-            id="fixNeeded"
-            onChange={(e) => setFixNeeded(e.target.value)}
-          ></input>{" "}
+          <label>
+            Fix needed:
+            <input
+              id="fixNeeded"
+              onChange={(e) => setFixNeeded(e.target.value)}
+            ></input>{" "}
+          </label>{" "}
           <br />
-          <label>Comments: </label>
+          <label for="comments">Comments: </label>
           <textarea
             id="comments"
             placeholder="Document Test"

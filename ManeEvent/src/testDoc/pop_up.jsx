@@ -1,5 +1,7 @@
 import React from "react";
 import TestLog from "./testlog";
+import { useState } from "react";
+import TestGetLogs from "./testGetLogs";
 
 //takes in parmaters used for showing and hinting the pop up, can also pass in children elements if desired
 //use {pros.childeren} to access the children elements
@@ -7,10 +9,11 @@ import TestLog from "./testlog";
 function Pop_up(props) {
   return props.trigger ? (
     <div className="popup">
+      <button onClick={() => props.setTrigger(false)}>close</button>
       <div className="popup_inner">
         <h1>Test log</h1>
         <TestLog />
-        <button onClick={() => props.setTrigger(false)}>close</button>
+        <TestGetLogs />
       </div>
     </div>
   ) : (
