@@ -154,3 +154,8 @@ devDependencies/ Versions (These versions work well with each other):
 
 If something goes wrong with React installation, you can also download the newest version:
 Follow install for React [Here](https://react.dev/learn/editor-setup)
+
+## Supabase Credentials
+
+VITE_SUPABASE_URL=https://iymuizxrloixssfaueyp.supabase.co
+VITE_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Iml5bXVpenhybG9peHNzZmF1ZXlwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTc1OTczMjEsImV4cCI6MjA3MzE3MzMyMX0.Ky_SoQbkGwbsEto7GSsVVJMQUJ7gl9hb60vevdsU8w8
