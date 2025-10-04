@@ -157,6 +157,7 @@ Follow install for React [Here](https://react.dev/learn/editor-setup)
 
 ## Supabase Credentials
 
+- In VS Code, right click on the ManeEvent/ folder
 - Create a file in the ManeEvent/ folder.
 - Call it .env.local
 - Copy and paste the following: 
