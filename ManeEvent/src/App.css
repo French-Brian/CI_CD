@@ -57,3 +57,54 @@ button.primary:focus {
 .label {
   color: #2b6150;
 }
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar img {
+  margin-right: auto;
+}
+
+.nav-buttons {
+  display: flex;
+  justify-content: space-evenly;
+  flex: 1;
+  margin-right: 2em;
+}
+
+.about-container {
+  display: flex;
+  justify-content: space-evenly;  
+  margin: 2em;
+  gap: 2em;                      
+}
+
+.about-box1 {
+  width: stretch;                         
+  padding: 1.5em;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  text-align: center;
+  color: black;
+}
+
+.about-box2 {
+  width: stretch;                         
+  padding: 1.5em;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  text-align: center;
+  color: black;
+}
