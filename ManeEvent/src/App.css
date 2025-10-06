@@ -20,7 +20,7 @@ button.primary {
   color: white;
   border: none;
   padding: 0.75em 1.5em;
-  font-size: 1.2em;
+  font-size: large;
   cursor: pointer;
   border-radius: 5px;
   margin: 0.5em;
@@ -79,7 +79,19 @@ button.primary:focus {
   display: flex;
   justify-content: space-evenly;
   flex: 1;
-  margin-right: 2em;
+  margin-right: 50%;
+}
+
+.navbar a {
+  color: #2b6150;
+  font-size: large;
+  font-weight: 550;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #3a7d66;
 }
 
 .about-container {

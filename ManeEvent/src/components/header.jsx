@@ -9,14 +9,16 @@ function Header() {
       <div className="navbar">
         <img
           src={logo}
-          style={{ width: "6%", height: "auto", objectFit: "scale-down", }}
+          style={{ width: "5%", height: "auto", objectFit: "scale-down", }}
           alt="logo"
         />
         <div className="nav-buttons">
-        <button className="primary">Home</button>
-        <button className="primary">About</button>
-        <button className="primary">FAQ</button>
-        <button className="primary">Login</button>
+          <a href="">Home</a>
+          <a href="">About</a>
+          <a href="">FAQ</a>
+        </div>
+        <div>
+          <button className="primary">Login</button>
         </div>
       </div>
     </>

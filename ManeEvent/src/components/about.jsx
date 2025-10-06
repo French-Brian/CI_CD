@@ -6,7 +6,7 @@ function About() {
   return (
     <div 
     className=""
-    style={{paddingTop: "80px"}}>
+    style={{paddingTop: "80px", backgroundColor: "white"}}>
       <Header />
       <div className=""
       style={{color: "#2b6150"}}>
