@@ -4,12 +4,14 @@ import logo from "../assets/lightLogo_800X800.png";
 import Footer from "../components/footer";
 // will use later import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import FAQ from "./faq";
 
 function Login() {
   // will use latter const navigate = useNavigate();
 
   return (
     <>
+      <FAQ />
       <div className="card container bg-white flex flex-col items-center justify-center min-h-screen">
         <img
           src={logo}
