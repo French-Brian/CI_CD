@@ -9,42 +9,47 @@ function Registration() {
 
   return (
     <>
-      <div
-        className="card"
-        style={{
-          width: "300px",
-          height: "300px",
-          overflow: "hidden",
-          borderRadius: "10px",
-          boxShadow: "0 4px 8px rgba(0, 0, 0, 0.5)",
-          position: "relative",
-        }}
-      >
-        <p>Registration Page</p>
-
-        <form>
-          <p>
+      <div className="card container bg-white flex flex-col items-center justify-center min-h-screen">
+        <h1 className=" text-[#2b6150] font-bold">Registration Page</h1>
+        <p className="text-[#2b6150] font-bold">
+          Please fill out the following information:
+        </p>
+        <form className="font-sans flex flex-col gap-4">
+          <p className="boarder border-2 border-[#2b6150] rounded-md justify-around space-x-25">
             <label className="label">Enter a username: </label>
             <input placeholder="Username" id="username"></input>
           </p>
-          <label className="label">Enter a password: </label>
-          <input placeholder="Password" id="password"></input>
-          <p>
+          <p className="boarder border-2 border-[#2b6150]  rounded-md justify-around space-x-25">
+            <label className="label">Enter a password: </label>
+            <input placeholder="Password" id="password"></input>
+          </p>
+          <p className="boarder border-2 rounded-md border-[#2b6150] justify-around space-x-25">
             <label className="label">What you would like to be called: </label>
             <input placeholder="Name" id="name"></input>
           </p>
-          <p>
-            <label className="label">Select Account Type:</label>
-            <input type="radio" name="Client" value="Client" />
-            Client
-            <input
-              className="label"
-              type="radio"
-              name="Provider"
-              value="Provider"
-            />
-            Provider
-          </p>
+          <div className="border-2 border-[#2b6150] rounded-md flex items-center justify-around p-4 space-x-6">
+            <label className="font-bold">Select Account Type:</label>
+
+            <label className="flex rounded-md items-center space-x-2 font-bold">
+              <input
+                type="radio"
+                name="accountType"
+                value="Client"
+                className="p-2 rounded-full border-[#2b6150] border-2"
+              />
+              Client
+            </label>
+
+            <label className="flex items-center space-x-2 font-bold">
+              <input
+                type="radio"
+                name="accountType"
+                value="Provider"
+                className="p-2"
+              />
+              Provider
+            </label>
+          </div>
           <div className="buttons">
             <button className="primary">Submit</button>
             <Link to="/">

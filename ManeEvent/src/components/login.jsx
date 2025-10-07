@@ -10,25 +10,29 @@ function Login() {
 
   return (
     <>
-      <div
-        className="card"
-        style={{
-          width: "300px",
-          height: "300px",
-          overflow: "hidden",
-          borderRadius: "10px",
-          boxShadow: "0 4px 8px rgba(0, 0, 0, 0.5)",
-          position: "relative",
-        }}
-      >
+      <div className="card container bg-white flex flex-col items-center justify-center min-h-screen">
         <img
           src={logo}
-          style={{ width: "70%", height: "70%", objectFit: "scale-down" }}
+          style={{ width: "35%", height: "35%", objectFit: "scale-down" }}
         />
-        <form>
-          <input placeholder="Username" id="username"></input>
-          <input placeholder="Password" id="password"></input>
-          <div className="buttons">
+        <form className="form">
+          <p>
+            <input
+              className=" backdrop-blur-2xl font-bold"
+              placeholder="Username"
+              id="username"
+            ></input>
+          </p>
+          <p className="p-5"></p>
+          <p>
+            <input
+              type="password"
+              className="backdrop-blur-2xl font-bold mask-auto"
+              placeholder="Password"
+              id="password"
+            ></input>
+          </p>
+          <div className="buttons p-2">
             <button className="primary">Submit</button>
             <Link to="/">
               <button className="primary">cancel</button>
