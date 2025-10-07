@@ -1,8 +1,6 @@
 import React from "react";
-
 import Supabase from "../backend/supabase/supabaseClient";
-import Pop_up from "./pop_up";
-
+import "./testlog.css";
 function TestLog() {
   //set the state for each input feild to blank to watch for changes
 
@@ -59,28 +57,65 @@ function TestLog() {
   }
 
   return (
-    <>
-      <div>
-        <h2>Test Log </h2>
-        <form id="testLog" onSubmit={setTestLog}>
-          <label>
+    <div className="max-w-md mx-auto mt-10 p-6 bg-white rounded-2xl shadow-blue-950 border border-[#2b6150]">
+      <h2 className="text-2xl font-black text-[#2b6150] mb-6 text-center">
+        Test Log
+      </h2>
+
+      <form id="testLog" onSubmit={setTestLog} className="space-y-4">
+        <div>
+          <label
+            htmlFor="itemTested"
+            className="block text-[#2b6150] font-medium mb-1"
+          >
             Item tested:
-            <input id="itemTested"></input>
           </label>
-          <br />
-          <label>
+          <input
+            id="itemTested"
+            type="text"
+            className="w-full border border-[#2b6150] rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#2b6150]/70"
+          />
+        </div>
+
+        <div>
+          <label
+            htmlFor="fixNeeded"
+            className="block text-[#2b6150] font-medium mb-1"
+          >
             Fix needed:
-            <input id="fixNeeded"></input>
           </label>
-          <br />
-          <label for="comments">Comments: </label>
-          <textarea id="comments" placeholder="Document Test"></textarea>
-          <br />
-          <button type="submit">Submit Test Doc</button> <hr />
-          {/** No onclick when inside form submit, submit though onSubmit of form*/}
-        </form>
-      </div>
-    </>
+          <input
+            id="fixNeeded"
+            type="text"
+            className="w-full border border-[#2b6150] rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#2b6150]/70"
+          />
+        </div>
+
+        <div>
+          <label
+            htmlFor="comments"
+            className="block text-[#2b6150] font-medium mb-1"
+          >
+            Comments:
+          </label>
+          <textarea
+            id="comments"
+            placeholder="Document Test"
+            className="w-full border border-[#2b6150] rounded-lg px-3 py-2 h-24 resize-none focus:outline-none focus:ring-2 focus:ring-[#2b6150]/70"
+          ></textarea>
+        </div>
+
+        <button
+          type="submit"
+          className="w-full bg-[#2b6150] text-white font-semibold py-2 rounded-lg hover:bg-[#2b6150]/80 transition-colors"
+        >
+          Submit Test Doc
+        </button>
+
+        <hr className="mt-6 border-[#2b6150]/40" />
+      </form>
+    </div>
   );
 }
+
 export default TestLog;
