@@ -4,8 +4,11 @@ import logo from "./assets/lightLogo_800X800.png";
 import Footer from "./components/footer";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import Pop_up from "./testDoc/pop_up";
+import { useState } from "react";
 
 function App() {
+  const [ButtonPopup, setButtonPopup] = useState(false);
   const navigate = useNavigate();
   const register = () => {
     navigate("/register");
@@ -15,20 +18,10 @@ function App() {
   };
   return (
     <>
-      <div
-        className="card"
-        style={{
-          width: "300px",
-          height: "300px",
-          overflow: "hidden",
-          borderRadius: "10px",
-          boxShadow: "0 4px 8px rgba(0, 0, 0, 0.5)",
-          position: "relative",
-        }}
-      >
+      <div className="container bg-white flex flex-col items-center justify-center min-h-screen">
         <img
           src={logo}
-          style={{ width: "75%", height: "75%", objectFit: "scale-down" }}
+          style={{ width: "55%", height: "55%", objectFit: "scale-down" }}
         />
         <div className="buttons">
           <button className="primary" onClick={Login}>
@@ -42,6 +35,8 @@ function App() {
       <div>
         <Footer />
       </div>
+      <button onClick={() => setButtonPopup(true)}>Log test</button>
+      <Pop_up trigger={ButtonPopup} setTrigger={setButtonPopup} />
     </>
   );
 }
