@@ -18,20 +18,10 @@ function App() {
   };
   return (
     <>
-      <div
-        className="card"
-        style={{
-          width: "300px",
-          height: "300px",
-          overflow: "hidden",
-          borderRadius: "10px",
-          boxShadow: "0 4px 8px rgba(0, 0, 0, 0.5)",
-          position: "relative",
-        }}
-      >
+      <div className="container bg-white flex flex-col items-center justify-center min-h-screen">
         <img
           src={logo}
-          style={{ width: "75%", height: "75%", objectFit: "scale-down" }}
+          style={{ width: "55%", height: "55%", objectFit: "scale-down" }}
         />
         <div className="buttons">
           <button className="primary" onClick={Login}>
