@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Footer from "./footer";
+import Header from "./header"
 
 const Navbar = () => {
   return (
@@ -10,13 +11,13 @@ const Navbar = () => {
             Home
           </a>
           <a href="page1" className="hover:text-green-800">
-            Page1
+            About
           </a>
           <a href="page2" className="hover:text-blue-600">
-            Page2
+            Services
           </a>
-          <a href="page3" className="hover:text-red-600">
-            Page3
+          <a href="./faq" className="hover:text-red-600">
+            FAQ
           </a>
         </div>
       </div>
