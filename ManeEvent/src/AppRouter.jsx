@@ -4,12 +4,16 @@ import Registration from "./components/registration";
 import Login from "./components/login";
 import About from "./components/about";
 import FAQ from "./components/faq";
-
-
+import AuthRoute from "./AuthRoutes";
+import Home from "./components/authUser/home";
 export default function AppRouter() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route element={<AuthRoute />}>
+          <Route path="/home" element={<Home />} />
+        </Route>
+
         <Route path="/" element={<App />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Registration />} />

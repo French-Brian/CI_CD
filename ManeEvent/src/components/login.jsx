@@ -2,12 +2,29 @@ import "../App.css";
 import React from "react";
 import logo from "../assets/lightLogo_800X800.png";
 import Footer from "../components/footer";
-// will use later import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import FAQ from "./faq";
+import { useAuth } from "./context/Authorization";
+import { useRef, useState } from "react";
 
-function Login() {
-  // will use latter const navigate = useNavigate();
+const Login = () => {
+  const email = useRef(null);
+  const password = useRef(null);
+  const navigate = useNavigate();
+  const { login } = useAuth();
+
+  const handelSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const {
+        data: { user, session },
+        error,
+      } = await login(email.current.value, password.current.value);
+      if (user && session) {
+        navigate("/home");
+      }
+    } catch (error) {}
+  };
 
   return (
     <>
@@ -17,7 +34,7 @@ function Login() {
           src={logo}
           style={{ width: "35%", height: "35%", objectFit: "scale-down" }}
         />
-        <form className="form">
+        <form className="form" onSubmit={handelSubmit}>
           <p>
             <input
               className=" backdrop-blur-2xl font-bold"
@@ -47,6 +64,6 @@ function Login() {
       </div>
     </>
   );
-}
+};
 
 export default Login;
