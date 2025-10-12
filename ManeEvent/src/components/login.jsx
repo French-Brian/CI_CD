@@ -11,7 +11,7 @@ function Login() {
 
   return (
     <>
-      <FAQ />
+      
       <div className="card container bg-white flex flex-col items-center justify-center min-h-screen">
         <img
           src={logo}
@@ -20,7 +20,7 @@ function Login() {
         <form className="form">
           <p>
             <input
-              className=" backdrop-blur-2xl font-bold"
+              className=" backdrop-blur-2xl font-bold border border-2 border-solid"
               placeholder="Username"
               id="username"
             ></input>
