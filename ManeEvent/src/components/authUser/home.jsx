@@ -32,7 +32,7 @@ const Home = () => {
     <>
       <ClientHeader />
       <p>{err ? String(err) : ""}</p>
-      {/* ck error if none dont render in tree */}
+      {/* ck error if none don't render in tree */}
       <div className="p-25" id="profile">
         <h1>
           Welcome,{" "}

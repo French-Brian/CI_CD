@@ -1,7 +1,6 @@
 import React, { useRef, useState } from "react";
 import Footer from "../footer.jsx";
 import Header from "./ClientHeader.jsx";
-
 import { Link } from "react-router-dom";
 import Supabase from "../../backend/supabase/supabaseClient.js";
 import { useUser } from "../context/Authorization";
@@ -15,23 +14,21 @@ const ProfileSetup = () => {
 
   const handelSubmit = async (e) => {
     e.preventDefault();
-
     if (client) {
       setRole("Client");
     }
     if (provider) {
       setRole("Provider");
     }
-
     if (!role || !displayName.current?.value) {
       setErrMsg("please fill in the values");
       return;
     }
     {
       /**update the profiles table with the authneticated user id from supabase set role and displaynme
-    
+  
     my extend to hold appoinments/ other attributes. 
-      
+    
    */
     }
     const { data, error } = await Supabase.from("profiles").insert([
@@ -50,7 +47,6 @@ const ProfileSetup = () => {
     {
       /**updaate the user object stored in the context of the app */
     }
-
     if (error) {
       console.log("Error inserting data:", error);
     } else {
