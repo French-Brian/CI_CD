@@ -5,13 +5,14 @@ import Footer from "../components/footer";
 // will use later import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import FAQ from "./faq";
+import Header from "./header";
 
 function Login() {
   // will use latter const navigate = useNavigate();
 
   return (
     <>
-      <FAQ />
+    <Header />
       <div className="card container bg-white flex flex-col items-center justify-center min-h-screen">
         <img
           src={logo}

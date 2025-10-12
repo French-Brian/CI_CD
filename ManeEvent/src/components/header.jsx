@@ -13,9 +13,9 @@ function Header() {
           alt="logo"
         />
         <div className="nav-buttons">
-          <a href="">Home</a>
-          <a href="">About</a>
-          <a href="">FAQ</a>
+          <a href="/">Home</a>
+          <a href="./about">About</a>
+          <a href="./faq">FAQ</a>
         </div>
         <div>
           <button className="primary">Login</button>

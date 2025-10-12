@@ -120,3 +120,19 @@ button.primary:focus {
   text-align: center;
   color: black;
 }
+
+.button {
+  border-radius: 30px;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+.buttonText {
+  width: 100%;
+  text-align: left;
+  padding: 20px;
+  font: bold;
+  transition: background-color 3s ease-in;
+  transition-duration: 300ms;
+}
+
