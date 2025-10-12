@@ -23,12 +23,12 @@ function Header() {
           <a href="/about">About</a>
           <a href="/faq">FAQ</a>
         </div>
-        <div className="button-group">
+        <div>
           <button className="primary" onClick={() => navigate("/login")}>
-            Register
+            Account
           </button>
           <button className="primary" onClick={() => navigate("/login")} style={{ backgroundColor: "black"}}>
-            Login
+            Logout
           </button>
         </div>
       </div>
