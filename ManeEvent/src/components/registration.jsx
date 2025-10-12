@@ -1,7 +1,6 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Footer from "./footer";
 import Header from "./header";
-// import { useNavigate } from "react-router-dom";
 import { Link, useNavigate } from "react-router-dom";
 import Supabase from "../backend/supabase/supabaseClient.js";
 
@@ -10,14 +9,22 @@ const Registration = () => {
   const password = useRef(null);
   const navigate = useNavigate();
   const comFirmPassword = useRef(null);
-  const commonName = useRef(null);
-  const [client, setClient] = useState(false);
-  const [provider, setProvider] = useState(false);
   const [errMsg, setErrMsg] = useState("");
-  const [msg, setMsg] = useState("");
+  const [countdown] = useState(3);
 
   const register = (email, password) =>
     Supabase.auth.signUp({ email, password });
+  useEffect(() => {
+    if (countdown <= 0) {
+      navigate("/login");
+      return;
+    }
+    const timer = setTimeout(() => {
+      countdown((prev) => prev - 1);
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  });
 
   const handelSubmit = async (e) => {
     e.preventDefault();
@@ -32,9 +39,7 @@ const Registration = () => {
     if (password.current?.value !== comFirmPassword.current?.value) {
       setErrMsg("Passwords are not the same");
     }
-    if (!client && !provider) {
-      setErrMsg("Select account type");
-    }
+
     if (
       email.current?.value &&
       password.current?.value === comFirmPassword.current?.value
@@ -44,8 +49,9 @@ const Registration = () => {
           email.current.value,
           password.current.value
         );
-
-        navigate("/");
+        if (data) {
+          setErrMsg("Going to Login" + countdown);
+        }
       } catch (error) {
         setErrMsg("Error creating account:  " + error);
       }
@@ -81,41 +87,7 @@ const Registration = () => {
               ref={comFirmPassword}
             ></input>
           </p>
-          <p className="boarder border-2 rounded-md border-[#2b6150] justify-around space-x-25">
-            <label className="label">What you would like to be called: </label>
-            <input placeholder="Name" id="name" ref={commonName}></input>
-          </p>
-          <div className="border-2 border-[#2b6150] rounded-md flex items-center justify-around p-4 space-x-6">
-            <label className="font-bold">Select Account Type:</label>
 
-            <label className="flex rounded-md items-center space-x-2 font-bold">
-              <input
-                type="radio"
-                name="accountType"
-                value="Client"
-                className="p-2 rounded-full border-[#2b6150] border-2"
-                onClick={() => {
-                  setProvider(false);
-                  setClient(true);
-                }}
-              />
-              Client
-            </label>
-
-            <label className="flex items-center space-x-2 font-bold">
-              <input
-                type="radio"
-                name="accountType"
-                value="Provider"
-                className="p-2"
-                onClick={() => {
-                  setProvider(true);
-                  setClient(false);
-                }}
-              />
-              Provider
-            </label>
-          </div>
           <div className="buttons">
             <button className="primary">Submit</button>
             <Link to="/">
@@ -123,11 +95,9 @@ const Registration = () => {
             </Link>
           </div>
         </form>
+        <Link to="/Login">Have an Account</Link>
       </div>
-      <div>
-        Have an Account <Link to="/Login"></Link>
-      </div>
-
+      <div></div>
       <Footer />
     </>
   );

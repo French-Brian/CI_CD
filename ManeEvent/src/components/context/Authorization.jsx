@@ -1,32 +1,17 @@
-import { createContext, useEffect, useContext, useState } from "react";
+import { createContext, useContext, useState } from "react";
 import Supabase from "../../backend/supabase/supabaseClient";
 
-const AuthContext = createContext({});
-export const useAuth = () => useContext(AuthContext);
+const userContext = createContext({});
+export const useUser = () => useContext(userContext);
+{
+  /**creates the context to be set if the user is authenticated via supabase */
+}
 
-const login = (email, password) =>
-  Supabase.auth.signInWithPassword({ email, password });
-
-const Authorization = ({ children }) => {
+export const UserProvider = ({ children }) => {
   const [user, setUser] = useState(null);
-  const [auth, setAuth] = useState(null);
-
-  useEffect(() => {
-    const { data } = Supabase.auth.onAuthStateChange((event, session) => {
-      if (event === "SIGNED_IN") {
-        setAuth(true);
-        setUser(session.user);
-      }
-    });
-    return () => {
-      data.subscription.unsubscribe();
-    };
-  }, []);
-
   return (
-    <AuthContext.Provider value={{ user, login }}>
+    <userContext.Provider value={{ user, setUser }}>
       {children}
-    </AuthContext.Provider>
+    </userContext.Provider>
   );
 };
-export default Authorization;
