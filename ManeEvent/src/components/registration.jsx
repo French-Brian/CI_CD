@@ -52,6 +52,10 @@ const Registration = () => {
         if (data) {
           setErrMsg("Going to Login" + countdown);
         }
+
+        if (error) {
+          setErrMsg(error.code);
+        }
       } catch (error) {
         setErrMsg("Error creating account:  " + error.code);
       }
