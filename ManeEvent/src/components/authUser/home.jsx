@@ -3,14 +3,15 @@ import React, { useEffect, useState } from "react";
 import ClientHeader from "./ClientHeader";
 import Supabase from "../../backend/supabase/supabaseClient";
 import ProfileSetup from "./ProfileSetup";
-import { useUser } from "../context/Authorization"; //passed from the authenitcation user form supabase
+import { useUser } from "../context/Authorization"; //passed from the authentication user form supabase
+import Dashboard from "./dashboard";
 
 const Home = () => {
-  const { user } = useUser(); //getcontext- aka user is authorized via supabase
+  const { user, setUser } = useUser(); //getcontext- aka user is authorized via supabase
   const [profile, setProfile] = useState(null);
   const [err, setErr] = useState("");
   useEffect(() => {
-    if (!user?.id) return; //see if there is a login user
+    if (!user?.id || user?.profile) return; //see if there is a login user
     const getProfile = async () => {
       //unable to mod supabase user table to select roles and other data
       const { data, error } = await Supabase.from("profiles")
@@ -18,15 +19,17 @@ const Home = () => {
         .eq("id", user.id); //check if the user set up profile
 
       if (error) {
-        setErr(error);
-      } else {
-        if (user.profile) {
-          setProfile(data[0]); //response from supabasee
-        }
+        setErr(error.code || "Unknown Error");
+      } else if (data.length > 0) {
+        setProfile(data[0]); //response from supabasee
+        setUser({ ...user, profile: profile });
       }
     };
     getProfile();
-  }, [user]);
+  }, [profile, setUser, user]);
+
+  //  const strUser = JSON.stringify(user);
+  //  console.log(strUser);
 
   return (
     <>
@@ -39,7 +42,10 @@ const Home = () => {
           {profile ? profile.displayname : "we did not find a profile for you."}
           {/**ck profile is set or not */}
         </h1>
-        {!profile && <ProfileSetup onProfileCreated={setProfile} />}
+        {!profile && <ProfileSetup onLoad={setProfile} />}
+      </div>
+      <div>
+        <Dashboard />
       </div>
     </>
   );

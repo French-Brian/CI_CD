@@ -45,12 +45,10 @@ const ProfileSetup = () => {
       });
     }
     {
-      /**updaate the user object stored in the context of the app */
+      /**updaate the user object stored in the context of the app with the profile recived from the table from suapbase */
     }
     if (error) {
-      console.log("Error inserting data:", error);
-    } else {
-      console.log("Data inserted successfully:", data);
+      setErrMsg(error.code || "Unknown problem");
     }
   };
 
