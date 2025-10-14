@@ -46,13 +46,12 @@ const Login = () => {
         password.current.value = "";
       }
     } catch (error) {
-      setErr(error);
+      setErr(error.code || "Unknow Error");
     }
   };
 
   return (
     <>
-      
       <div className="card container bg-white flex flex-col items-center justify-center min-h-screen">
         <img
           src={logo}
