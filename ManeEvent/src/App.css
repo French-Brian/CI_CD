@@ -63,6 +63,7 @@ button.primary:focus {
   top: 0;
   left: 0;
   width: 100%;
+  padding: 0 20px;
   background-color: white;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   z-index: 1000;
@@ -80,6 +81,18 @@ button.primary:focus {
   justify-content: space-evenly;
   flex: 1;
   margin-right: 50%;
+}
+
+.button-group {
+  display: flex;
+  gap: 0.5em;
+  width: auto; /* do not stretch full navbar */
+}
+
+.button-group button {
+  flex: 0 0 100px; /* each button is 100px wide */
+  /* optional: keep padding for text */
+  padding: 0.75em 1em;
 }
 
 .navbar a {

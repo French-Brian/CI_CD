@@ -6,6 +6,8 @@ import About from "./components/about";
 import FAQ from "./components/faq";
 import AuthRoute from "./AuthRoutes";
 import Home from "./components/authUser/home";
+import PublicWelcome from "./components/landingPage"; 
+
 export default function AppRouter() {
   return (
     <BrowserRouter>
@@ -15,6 +17,7 @@ export default function AppRouter() {
         </Route>
 
         <Route path="/" element={<App />} />
+        <Route path="/" element={<PublicWelcome />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Registration />} />
         <Route path="/about" element={<About />} />
