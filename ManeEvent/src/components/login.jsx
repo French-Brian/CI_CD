@@ -38,10 +38,17 @@ const Login = () => {
         }
         //console.log(user);
         setUser(user);
+
         navigate("/home");
       }
       if (error.code === "invalid_credentials") {
         setErr("That combination did not match");
+        email.current.value = "";
+        password.current.value = "";
+        return;
+      }
+      if (error.code === "email_not_confirmed") {
+        setErr("Please verify email address used to register");
         email.current.value = "";
         password.current.value = "";
         return;
