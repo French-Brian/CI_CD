@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 //import { userState } from "react";
 import ClientHeader from "./ClientHeader";
 import Supabase from "../../backend/supabase/supabaseClient";
@@ -24,9 +24,11 @@ const Home = () => {
     header = <Header />;
   } //dynamically decides which header to load based on role form registering.
 
-  if (user) {
-    setErr("There was an error");
-  }
+  useEffect(() => {
+    if (user) {
+      setErr("There was an error");
+    }
+  }, [user]);
 
   return (
     <>
