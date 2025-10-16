@@ -46,6 +46,12 @@ const Login = () => {
         password.current.value = "";
         return;
       }
+      if (error.code === "email_not_confirmed") {
+        setErr("Please verify email address used to register");
+        email.current.value = "";
+        password.current.value = "";
+        return;
+      }
     } catch (error) {
       setErr(error.code || "Unknown Error");
     }
