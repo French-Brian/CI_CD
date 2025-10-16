@@ -15,7 +15,7 @@ const Home = () => {
   const username = user.user_metadata.endUser.USERNAME;
   const role = user.user_metadata.endUser.ROLE;
   const displayName = user.user_metadata.endUser.DISPLAYNAME;
-
+  const userId = user.id;
   let header;
   if (role === "CLIENT") {
     header = <ClientHeader />;
@@ -48,6 +48,7 @@ const Home = () => {
           : "There was no username with your account"}
         <div className=" p-5  ">
           <Dashboard />
+          <p>{userId}</p>
         </div>
       </div>
 

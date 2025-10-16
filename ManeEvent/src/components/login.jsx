@@ -38,6 +38,7 @@ const Login = () => {
         }
         //console.log(user);
         setUser(user);
+
         navigate("/home");
       }
       if (error.code === "invalid_credentials") {
