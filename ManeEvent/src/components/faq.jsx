@@ -1,52 +1,29 @@
 import React, { useState } from "react";
 import Footer from "./footer";
-import Header from "./header"
-
-const Navbar = () => {
-  return (
-    <nav>
-      <div className="">
-        <div className="flex justify-evenly">
-          <a href="/" className="hover:text-pink-600">
-            Home
-          </a>
-          <a href="page1" className="hover:text-green-800">
-            About
-          </a>
-          <a href="page2" className="hover:text-blue-600">
-            Services
-          </a>
-          <a href="./faq" className="hover:text-red-600">
-            FAQ
-          </a>
-        </div>
-      </div>
-    </nav>
-  );
-};
+import Header from "./header";
 
 const FAQItem = ({ title, answer, isOpen, onClick, index }) => {
   return (
-    <div className="border">
+    <div className="border button">
       <button
         onClick={onClick}
-        className={`flex justify-between w-full ${
-          isOpen ? "bg-blue-600 text-white" : "bg-blue-50 text-slate-800"
+        className={`buttonText ${
+          isOpen ? "bg-green text-black" : "bg-[#2b6150] text-white "
         }`}
       >
-        <span>{title}</span>
-        <span className="text-xl">{isOpen ? "-" : "+"}</span>
+        <div className="flex justify-between items-center">
+          <span>{title}</span>
+          <span>{isOpen ? "-" : "+"}</span>
+        </div>
       </button>
 
       <div
         id={`faq-answer-${index}`}
-        className={`grid transition-all ${
-          isOpen
-            ? "grid-rows-[1fr] opacity-100 mt-3"
-            : "grid-rows-[0fr] opacity-0"
+        className={`transition-all duration-300 ease-in-out overflow-hidden ${
+          isOpen ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
         }`}
       >
-        <div className="overflow-hidden">{answer}</div>
+        <div className="p-4 text-left">{answer}</div>
       </div>
     </div>
   );
@@ -85,9 +62,11 @@ const FAQ = () => {
 
   return (
     <>
-      <Navbar />
-      <div>
-        <h1>FAQ</h1>
+      <Header />
+      <div className="mt-32">
+        <h1 className="text-3xl font-bold text-center mb-6 text-green-900">
+          FAQ
+        </h1>
         {faqs.map((faq, index) => (
           <FAQItem
             key={index}

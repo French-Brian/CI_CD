@@ -4,7 +4,6 @@ import Header from "./header";
 import { Link, useNavigate } from "react-router-dom";
 import Supabase from "../backend/supabase/supabaseClient.js";
 import logo from "../assets/lightLogo_800X800.png";
-
 const Registration = () => {
   const email = useRef(null);
   const password = useRef(null);
@@ -73,13 +72,18 @@ const Registration = () => {
         if (error) {
           setErrMsg(error.code);
         }
+
+        if (error) {
+          setErrMsg(error.code);
+        }
       } catch (error) {
-        setErrMsg("Error creating account:  " + error);
+        setErrMsg("Error creating account:  " + error.code);
       }
   };
 
   return (
     <>
+      {" "}
       <div className="card container bg-white flex flex-col items-center justify-center min-h-screen">
         <img
           src={logo}
@@ -198,7 +202,6 @@ const Registration = () => {
         </form>
         <Link to="/Login">Have an Account</Link>
       </div>
-      <div></div>
       <Footer />
     </>
   );
