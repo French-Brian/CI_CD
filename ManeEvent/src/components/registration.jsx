@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import Footer from "./footer";
 import Header from "./header";
 import { Link, useNavigate } from "react-router-dom";
@@ -7,24 +7,36 @@ import logo from "../assets/lightLogo_800X800.png";
 const Registration = () => {
   const email = useRef(null);
   const password = useRef(null);
+  const displayName = useRef(null);
+  const username = useRef(null);
+  const [role, setRole] = useState("");
   const navigate = useNavigate();
   const comFirmPassword = useRef(null);
   const [errMsg, setErrMsg] = useState("");
-  const [countdown] = useState(3);
 
   const register = (email, password) =>
-    Supabase.auth.signUp({ email, password });
-  useEffect(() => {
-    if (countdown <= 0) {
-      navigate("/login");
-      return;
-    }
-    const timer = setTimeout(() => {
-      countdown((prev) => prev - 1);
-    }, 1000);
-
-    return () => clearTimeout(timer);
-  });
+    Supabase.auth.signUp({
+      email,
+      password,
+      options: {
+        data: {
+          endUser: {
+            /*creating 
+            "user_metadata": {
+              email: "b22french@outlook.com",
+               email_verified: false,
+                endUser: {
+                  DISPLAYNAME: "displayname",
+                  ROLE: "CLIENT",
+                  USERNAME: "username",
+                  },*/
+            USERNAME: username.current.value,
+            DISPLAYNAME: displayName.current.value.trim(),
+            ROLE: role,
+          },
+        },
+      },
+    });
 
   const handelSubmit = async (e) => {
     e.preventDefault();
@@ -43,14 +55,22 @@ const Registration = () => {
     if (
       email.current?.value &&
       password.current?.value === comFirmPassword.current?.value
-    ) {
+    )
       try {
         const { data, error } = await register(
           email.current.value,
           password.current.value
         );
         if (data) {
-          setErrMsg("Going to Login" + countdown);
+          navigate("/");
+        }
+
+        if (error) {
+          setErrMsg(error.code);
+        }
+
+        if (error) {
+          setErrMsg(error.code);
         }
 
         if (error) {
@@ -59,7 +79,6 @@ const Registration = () => {
       } catch (error) {
         setErrMsg("Error creating account:  " + error.code);
       }
-    }
   };
 
   return (
@@ -76,25 +95,102 @@ const Registration = () => {
           Please fill out the following information:
         </p>
         <form className="font-sans flex flex-col gap-4" onSubmit={handelSubmit}>
-          <p className="boarder border-2 border-[#2b6150] rounded-md justify-around space-x-25">
-            <label className="label">Enter a Email: </label>
-            <input placeholder="email" ref={email}></input>
+          <p className="p-3 boarder border-2 border-[#2b6150] rounded-md justify-around space-x-25">
+            <label htmlFor="email" className="label">
+              Enter a Email:{" "}
+            </label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              placeholder="Email"
+              autoComplete="email"
+              ref={email}
+            ></input>
           </p>
-          <p className="boarder border-2 border-[#2b6150]  rounded-md justify-around space-x-25">
-            <label className="label">Enter a password: </label>
+          <p className=" p-3 boarder border-2 border-[#2b6150]  rounded-md justify-around space-x-25">
+            <label htmlFor="password" className="label">
+              Enter a password:{" "}
+            </label>
             <input
               type="password"
+              name="password"
               placeholder="Password"
+              autoComplete="new-password"
               ref={password}
             ></input>
           </p>
-          <p className="boarder border-2 border-[#2b6150]  rounded-md justify-around space-x-25">
-            <label className="label">Confirm password: </label>
+          <p className="p-3 boarder border-2 border-[#2b6150]  rounded-md justify-around space-x-25">
+            <label htmlFor="Confirm password">Confirm password: </label>
             <input
               type="password"
+              name="Confirm password"
               placeholder="Confirm password"
               ref={comFirmPassword}
             ></input>
+          </p>
+          <p className=" p-2 boarder border-2 border-[#2b6150]  rounded-md justify-around space-x-25">
+            <label htmlFor="displayname " className="label">
+              Display name:{" "}
+            </label>
+            <input
+              type="Text"
+              name="displayname"
+              placeholder="Display name"
+              autoComplete="nickname"
+              ref={displayName}
+            ></input>
+          </p>
+          <p className=" p-2 boarder border-2 border-[#2b6150]  rounded-md justify-around space-x-25">
+            <label htmlFor="username " className="label">
+              Username:{" "}
+            </label>
+            <input
+              type="Text"
+              name="username"
+              placeholder="Username"
+              autoCapitalize="yes"
+              autoComplete="username"
+              ref={username}
+            ></input>
+          </p>
+
+          <p>
+            <label className=" boarder border-2 border-[#2b6150] justify-around flex rounded-md items-center space-x-2 font-bold">
+              Select Account Type:
+              <label
+                htmlFor="accountType"
+                className="flex rounded-md items-center space-x-2 font-bold"
+              >
+                <input
+                  type="radio"
+                  name="accountType"
+                  value="CLIENT"
+                  id="client"
+                  className="p-3 rounded-full border-[#2b6150] border-2"
+                  onClick={() => {
+                    setRole("CLIENT");
+                  }}
+                />
+                Client
+              </label>
+              <label
+                htmlFor="accountType"
+                className="flex items-center space-x-2 font-bold p-4"
+              >
+                <input
+                  type="radio"
+                  name="accountType"
+                  value="PROVIDER"
+                  id="provider"
+                  className="p-3"
+                  onClick={() => {
+                    setRole("PROVIDER");
+                  }}
+                />
+                Provider
+              </label>
+            </label>
           </p>
 
           <div className="buttons">

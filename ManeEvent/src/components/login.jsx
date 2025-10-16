@@ -44,9 +44,10 @@ const Login = () => {
         setErr("That combination did not match");
         email.current.value = "";
         password.current.value = "";
+        return;
       }
     } catch (error) {
-      setErr(error.code || "Unknow Error");
+      setErr(error.code || "Unknown Error");
     }
   };
 
@@ -63,7 +64,7 @@ const Login = () => {
             <label htmlFor="email">Email: </label>
             <input
               className=" backdrop-blur-2xl font-bold"
-              placeholder=""
+              placeholder="Email"
               type="email"
               id="email"
               autoComplete="email"
@@ -76,7 +77,7 @@ const Login = () => {
             <input
               type="password"
               className="backdrop-blur-2xl font-bold mask-auto"
-              placeholder=""
+              placeholder="password"
               id="password"
               autoComplete="current-password"
               ref={password}

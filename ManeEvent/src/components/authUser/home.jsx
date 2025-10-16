@@ -1,48 +1,44 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 //import { userState } from "react";
 import ClientHeader from "./ClientHeader";
 import Supabase from "../../backend/supabase/supabaseClient";
-import ProfileSetup from "./ProfileSetup";
 import { useUser } from "../context/Authorization"; //passed from the authentication user form supabase
 import Dashboard from "./dashboard";
+import { use } from "react";
+import 
 
 const Home = () => {
-  const { user, setUser } = useUser(); //getcontext- aka user is authorized via supabase
-  const [profile, setProfile] = useState(null);
+  const { user } = useUser(); //getcontext- aka user is authorized via supabase
   const [err, setErr] = useState("");
-  useEffect(() => {
-    if (!user?.id || user?.profile) return; //see if there is a login user
-    const getProfile = async () => {
-      //unable to mod supabase user table to select roles and other data
-      const { data, error } = await Supabase.from("profiles")
-        .select("*")
-        .eq("id", user.id); //check if the user set up profile
+  //userobject data
+  const username = user.user_metadata.endUser.USERNAME;
+  const role = user.user_metadata.endUser.ROLE;
+  const displayName = user.user_metadata.endUser.DISPLAYNAME;
+  const [header, setHeader] = useState();
+  
+  if (role === "CLIENT") { 
+    setHeader(<ClientHeader />);
+  }
 
-      if (error) {
-        setErr(error.code || "Unknown Error");
-      } else if (data.length > 0) {
-        setProfile(data[0]); //response from supabasee
-        setUser({ ...user, profile: profile });
-      }
-    };
-    getProfile();
-  }, [profile, setUser, user]);
+   if (role === "PROVIDER") {
+     setHeader(<ClientHeader />);
+   }
 
-  //  const strUser = JSON.stringify(user);
-  //  console.log(strUser);
+
+
+
 
   return (
     <>
       <ClientHeader />
       <p>{err ? String(err) : ""}</p>
-      {/* ck error if none don't render in tree */}
       <div className="p-25" id="profile">
         <h1>
-          Welcome,{" "}
-          {profile ? profile.displayname : "we did not find a profile for you."}
-          {/**ck profile is set or not */}
+          Welcome,
+          {displayName ? displayName : "No displayname with your account"}
+          {username ? username : "There was no username with your account"}
+          {role ? role : "No role with account"}
         </h1>
-        {!profile && <ProfileSetup onLoad={setProfile} />}
       </div>
       <div>
         <Dashboard />
