@@ -68,14 +68,6 @@ const Registration = () => {
         if (error) {
           setErrMsg(error.code);
         }
-
-        if (error) {
-          setErrMsg(error.code);
-        }
-
-        if (error) {
-          setErrMsg(error.code);
-        }
       } catch (error) {
         setErrMsg("Error creating account:  " + error.code);
       }
@@ -83,7 +75,6 @@ const Registration = () => {
 
   return (
     <>
-      {" "}
       <div className="card container bg-white flex flex-col items-center justify-center min-h-screen">
         <img
           src={logo}
