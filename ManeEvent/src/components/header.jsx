@@ -26,6 +26,7 @@ function Header() {
           <a href="/">Home</a>
           <a href="./about">About</a>
           <a href="./faq">FAQ</a>
+          <a href="./serviceProviderProfile">Profile</a>
         </div>
         <div className="button-group">
           <button className="primary" onClick={() => navigate("/register")}>
