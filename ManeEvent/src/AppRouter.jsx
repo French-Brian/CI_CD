@@ -7,6 +7,7 @@ import FAQ from "./components/faq";
 import AuthRoute from "./AuthRoutes";
 import Home from "./components/authUser/home";
 import PublicWelcome from "./components/landingPage";
+import Profile from "./components/serviceProviderProfile";
 
 export default function AppRouter() {
   return (
@@ -21,6 +22,7 @@ export default function AppRouter() {
         <Route path="/register" element={<Registration />} />
         <Route path="/about" element={<About />} />
         <Route path="/faq" element={<FAQ />} />
+        <Route path="/serviceProviderProfile" element={<Profile />} />
         <Route path="*" element={<h1>404 Not Found</h1>} />
       </Routes>
     </BrowserRouter>
