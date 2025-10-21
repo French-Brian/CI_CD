@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 //import { userState } from "react";
 import ClientHeader from "./ClientHeader";
-import Supabase from "../../backend/supabase/supabaseClient";
 import { useUser } from "../context/Authorization"; //passed from the authentication user form supabase
 import Dashboard from "./dashboard";
 
