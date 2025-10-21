@@ -149,3 +149,94 @@ button.primary:focus {
   transition-duration: 300ms;
 }
 
+.services-text {
+  color: #2b6150;
+  font-size:x-large;
+  font-weight: 600;
+  padding-bottom: 15px;
+}
+
+.services-box {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width:fit-content;
+  padding: 1.5em;
+  background-color: white;
+  border-radius: 8px;
+  border: thin solid #2b6150;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  color: black;
+}
+
+.services-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75em; /* space between options */
+  text-align: left;
+}
+
+.services-options label {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  cursor: pointer;
+}
+
+.services-options input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #2b6150;
+  border-radius: 50%;
+  background-color: white;
+  cursor: pointer;
+  position: relative;
+  transition: box-shadow 0.15s ease, border-color 0.15s ease;
+  box-sizing: border-box;
+}
+
+.services-options input[type="radio"]::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0); 
+  width: 8px;               
+  height: 8px;
+  border-radius: 50%;
+  background-color: #2b6150; 
+  transition: transform 0.12s ease;
+  pointer-events: none;
+}
+
+.services-options input[type="radio"]:checked::after {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.services-options input[type="radio"]:focus-visible {
+  outline: 3px solid rgba(43,97,80,0.18);
+  outline-offset: 3px;
+}
+
+.services-options input[type="radio"]:hover {
+  box-shadow: 0 0 3px rgba(43, 97, 80, 0.25);
+}
+
+.submit-button {
+  align-self: flex-end; /* bottom-right */
+  margin-top: 1em;
+  padding: 0.5em 1em;
+  background-color: #2b6150;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: #3a7c68;
+}
+
