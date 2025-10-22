@@ -24,24 +24,19 @@ function TestGetLogs() {
 
   function mapdata() {
     return (
-      <table>
+      <table className="bg-white rounded-2xl">
         {/*table is hidden until the state of logs is changed  when hidden state is false,  table is triggered when state of log const is changed*/}
         <thead>
-          <tr>
+          <tr className=" bg-[#2B6150]  text-white">
             <th>Item Tested</th>
             <th>Fix needed</th>
             <th>Comments</th>
           </tr>
         </thead>
         {/*map list to display each log entry*/}
-        <tbody
-          style={{ border: "1px solid black", outline: "1px solid black" }}
-        >
+        <tbody>
           {logs.map((log) => (
-            <tr
-              key={log.id}
-              style={{ border: "1px solid black", outline: "1px solid black" }}
-            >
+            <tr key={log.id} className="rounded-2xl border-2">
               <td>{log.itemTested}</td>
               <td>{log.fixNeeded}</td>
               <td>{log.comments}</td>
@@ -58,7 +53,7 @@ function TestGetLogs() {
 
       {/*Triggers the getlog function line 14*/}
       {showLogs ? ( //if showlogs state is true show else show  object form mapdata.
-        <div>
+        <div className="popup_inner">
           <button
             onClick={() => {
               setShowLogs(false); // changes state of show log to false which hides the logs

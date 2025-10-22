@@ -26,27 +26,24 @@ function TestFilter() {
 
   function mapdata() {
     return (
-      <table>
-        {/*table is hidden until the state of data is changed  when hidden state is false,  table is triggered when state of log const is changed*/}
+      <table className="bg-white rounded-2xl">
+        {/*table is hidden until the state of logs is changed  when hidden state is false,  table is triggered when state of log const is changed*/}
         <thead>
-          <tr>
+          <tr className=" bg-[#2B6150]  text-white">
             <th>Item Tested</th>
             <th>Fix needed</th>
             <th>Comments</th>
           </tr>
         </thead>
         {/*map list to display each log entry*/}
-        <tbody
-          style={{ border: "1px solid black", outline: "1px solid black" }}
-        >
+        <tbody>
           {data.map((log) => (
-            <tr
-              key={log.id}
-              style={{ border: "1px solid black", outline: "1px solid black" }}
-            >
+            <tr key={log.id} className="rounded-2xl border-2">
               <td>{log.itemTested}</td>
               <td>{log.fixNeeded}</td>
-              <td>{log.comments}</td>
+              <td className="whitespace-normal break-words max-w-xs">
+                {log.comments}
+              </td>
             </tr>
           ))}
         </tbody>
@@ -67,7 +64,7 @@ function TestFilter() {
           >
             Hide data
           </button>
-          <p>Filiterd data from db where fix equal to yes:</p>
+          <p>Need fix:</p>
           {mapdata()}
         </div>
       ) : (
