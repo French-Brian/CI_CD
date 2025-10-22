@@ -39,6 +39,9 @@ jobs:
         run: rm -rf node_modules package-lock.json
              npm ci
         working-directory: ./ManeEvent
+      - name: Verify vite install
+        working-directory: ./ManeEvent
+        run: npx vite --version
       - name: Build
         run: npm run build
         working-directory: ./ManeEvent
