@@ -6,9 +6,9 @@ on:
       - main
 
 permissions:
-  contents: read        # Allows reading repo contents
-  id-token: write       # Needed for OIDC token by deploy action
-  pages: write          # Allows publishing to GitHub Pages
+  contents: read
+  id-token: write
+  pages: write
 
 jobs:
   deploy:
@@ -29,7 +29,12 @@ jobs:
 
       - name: Build project
         working-directory: ./ManeEvent
-        run: echo "Building..." && VITE_SUPABASE_URL=${{ secrets.VITE_SUPABASE_URL }} VITE_SUPABASE_ANON_KEY=${{ secrets.VITE_SUPABASE_ANON_KEY }} npm run build
+        run: |
+          echo "Building with Supabase env vars..."
+          export VITE_SUPABASE_URL="${{ secrets.VITE_SUPABASE_URL }}"
+          export VITE_SUPABASE_ANON_KEY="${{ secrets.VITE_SUPABASE_ANON_KEY }}"
+          npm run build
+
       - name: Vite GitHub Pages Deployer
         uses: skywarth/vite-github-pages-deployer@v1.5.0
         with:
