@@ -5,9 +5,15 @@ on:
     branches:
       - main
 
+permissions:
+  contents: read        # Allows reading repo contents
+  id-token: write       # Needed for OIDC token by deploy action
+  pages: write          # Allows publishing to GitHub Pages
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
