@@ -9,7 +9,6 @@ import Home from "./components/authUser/home";
 import PublicWelcome from "./components/landingPage";
 import Profile from "./components/serviceProviderProfile";
 import Services from "./components/services";
-import CustomTheme from "../public/CustomTheme";
 
 export default function AppRouter() {
   return (
@@ -25,7 +24,6 @@ export default function AppRouter() {
         <Route path="/faq" element={<FAQ />} />
         <Route path="/serviceProviderProfile" element={<Profile />} />
         <Route path="*" element={<h1>404 Not Found</h1>} />
-        <Route path="/CustomTheme" element={<CustomTheme />} />
       </Routes>
     </BrowserRouter>
   );
