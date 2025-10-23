@@ -10,5 +10,6 @@ const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
 
 //crate a single supabase client
 const Supabase = createClient(supabaseUrl, supabaseKey);
+console.log("Supabase URL from Vite:", import.meta.env.VITE_SUPABASE_URL);
 
 export default Supabase;
