@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 //import { userState } from "react";
 import ClientHeader from "./ClientHeader";
+import Supabase from "../../backend/supabase/supabaseClient";
 import { useUser } from "../context/Authorization"; //passed from the authentication user form supabase
 import Dashboard from "./dashboard";
 
-import Header from "../providerHeader";
+import ProviderHeader from "../providerHeader";
 import Footer from "../footer";
 
 const Home = () => {
@@ -20,7 +21,7 @@ const Home = () => {
     header = <ClientHeader />;
   }
   if (role === "PROVIDER") {
-    header = <Header />;
+    header = <ProviderHeader />;
   } //dynamically decides which header to load based on role form registering.
 
   useEffect(() => {

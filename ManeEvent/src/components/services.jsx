@@ -7,7 +7,7 @@ export default function Services(){
     <div 
     className=""
     style={{paddingTop: "100px", backgroundColor: "white"}}>
-      
+      <Header />
       
         <div className="services-box">
             <div className="services-text">Services</div>
@@ -33,7 +33,7 @@ export default function Services(){
         <button className="submit-button">Submit</button>
       </div>
 
-      
+      <Footer />
     </div>
     );
 }
