@@ -4,7 +4,7 @@ import logo from "../assets/light logo.png";
 import { useNavigate } from "react-router-dom";
 <assets></assets>
 
-function Header() {
+function ProviderHeader() {
 
   const navigate = useNavigate();
 
@@ -35,4 +35,4 @@ function Header() {
     </>
   );
 }
-export default Header;
+export default ProviderHeader;

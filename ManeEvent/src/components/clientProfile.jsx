@@ -1,11 +1,11 @@
 import React from "react";
 import Footer from "./footer";
-import Header from "./header";
+import ClientHeader from "./clientHeader";
 
 function ClientProfile() {
   return (
     <>
-      <Header />
+      <ClientHeader />
 
       <div className="flex h-250">
 

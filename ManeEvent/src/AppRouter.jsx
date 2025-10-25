@@ -8,7 +8,8 @@ import AuthRoute from "./AuthRoutes";
 import Home from "./components/authUser/home";
 import PublicWelcome from "./components/landingPage";
 import Profile from "./components/serviceProviderProfile";
-import Services from "./components/services";
+import ClientProfile from "./components/clientProfile";
+//import Services from "./components/services";
 
 export default function AppRouter() {
   return (
@@ -23,6 +24,7 @@ export default function AppRouter() {
         <Route path="/about" element={<About />} />
         <Route path="/faq" element={<FAQ />} />
         <Route path="/serviceProviderProfile" element={<Profile />} />
+        <Route path="/clientProfile" element={<ClientProfile />} />
         <Route path="*" element={<h1>404 Not Found</h1>} />
       </Routes>
     </BrowserRouter>
