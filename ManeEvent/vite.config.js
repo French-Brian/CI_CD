@@ -6,16 +6,7 @@ import tailwindcss from "@tailwindcss/vite";
 const supabaseUrl = process.env.VITE_SUPABASE_URL;
 const supabaseKey = process.env.VITE_SUPABASE_ANON_KEY;
 
-console.log(
-  "Vite sees Supabase URL at build time:",
-  supabaseUrl ? "✅ loaded" : "❌ missing"
-);
-
 export default defineConfig({
   plugins: [react(), tailwindcss()],
   base: "/CI_CD/",
-  define: {
-    "import.meta.env.VITE_SUPABASE_URL": JSON.stringify(supabaseUrl),
-    "import.meta.env.VITE_SUPABASE_ANON_KEY": JSON.stringify(supabaseKey),
-  },
 });
