@@ -1,12 +1,12 @@
 import React from "react";
 import Footer from "./footer";
-import Header from "./header";
+import CheckHeader from "./checkHeader";
 
 
-function Profile() {
+function ProviderProfile() {
   return (
     <>
-      <Header />
+      <CheckHeader />
       <div className="flex h-250">
         
         <div className="flex-1 flex flex-col items-start bg-[#2b6150] text-white px-12">
@@ -54,4 +54,4 @@ function Profile() {
   );
 };
 
-export default Profile;
+export default ProviderProfile;

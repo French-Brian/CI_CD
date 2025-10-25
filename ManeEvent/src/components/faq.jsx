@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Footer from "./footer";
-import Header from "./header";
+import CheckHeader from "./checkHeader";
 
 const FAQItem = ({ title, answer, isOpen, onClick, index }) => {
   return (
@@ -62,7 +62,7 @@ const FAQ = () => {
 
   return (
     <>
-      <Header />
+      <CheckHeader />
       <div className="mt-32">
         <h1 className="text-3xl font-bold text-center mb-6 text-green-900">
           FAQ

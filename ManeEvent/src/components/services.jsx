@@ -1,13 +1,13 @@
 import React from "react";
 import Footer from "../components/footer";
-import Header from"../components/header";
+import CheckHeader from"../components/checkHeader";
 
 export default function Services(){
     return (
     <div 
     className=""
     style={{paddingTop: "100px", backgroundColor: "white"}}>
-      <Header />
+      <CheckHeader />
       
         <div className="services-box">
             <div className="services-text">Services</div>

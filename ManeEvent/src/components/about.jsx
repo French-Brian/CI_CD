@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "./header";
+import CheckHeader from "./checkHeader";
 import Footer from "./footer";
 
 function About() {
@@ -7,7 +7,7 @@ function About() {
     <div 
     className=""
     style={{paddingTop: "80px", backgroundColor: "white"}}>
-      <Header />
+      <CheckHeader />
       <div className=""
       style={{color: "#2b6150"}}>
       <h1>

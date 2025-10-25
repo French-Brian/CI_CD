@@ -1,12 +1,12 @@
 import React from "react";
 import Footer from "../components/footer";
-import Header from"../components/header";
+import CheckHeader from"../components/checkHeader";
 
 export default function PublicWelcome(){
     return (
         <div className="min-h-screen flex flex-col bg-white">
         
-        <Header />
+        <CheckHeader />
 
         <main className="flex-grow flex flex-col items-center justify-center text-center p-6">
             <h1 

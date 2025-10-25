@@ -2,11 +2,13 @@ import React from "react";
 import "../App.css";
 import logo from "../assets/light logo.png";
 import { useNavigate } from "react-router-dom";
+import useLogout from "./logout";
 <assets></assets>
 
 function ProviderHeader() {
 
   const navigate = useNavigate();
+  const { logout, error } = useLogout("/login");
 
   return (
     <>
@@ -22,15 +24,20 @@ function ProviderHeader() {
           <a href="/">Home</a>
           <a href="/about">About</a>
           <a href="/faq">FAQ</a>
+          <a href="">Services</a>
+
         </div>
         <div>
           <button className="primary" onClick={() => navigate("/login")}>
-            Account
+            Profile
           </button>
-          <button className="primary" onClick={() => navigate("/login")} style={{ backgroundColor: "black"}}>
+          <button className="primary" onClick={ logout } style={{ backgroundColor: "black"}}>
             Logout
           </button>
         </div>
+        
+        {error && <p className="text-red-600 text-sm mt-2">{error}</p>}
+
       </div>
     </>
   );
