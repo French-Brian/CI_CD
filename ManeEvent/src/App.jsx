@@ -4,11 +4,8 @@ import logo from "./assets/lightLogo_800X800.png";
 import Footer from "./components/footer";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import Pop_up from "./testDoc/pop_up";
-import { useState } from "react";
 
 function App() {
-  const [ButtonPopup, setButtonPopup] = useState(false);
   const navigate = useNavigate();
   const register = () => {
     navigate("/register");
@@ -35,8 +32,6 @@ function App() {
       <div>
         <Footer />
       </div>
-      <button onClick={() => setButtonPopup(true)}>Log test</button>
-      <Pop_up trigger={ButtonPopup} setTrigger={setButtonPopup} />
     </>
   );
 }
