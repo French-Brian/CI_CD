@@ -5,5 +5,5 @@ import tailwindcss from "@tailwindcss/vite";
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base: "/CI_CD/ManeEvent/dist",
+  base: "/CI_CD/ManeEvent/",
 });
