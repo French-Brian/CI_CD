@@ -25,7 +25,6 @@ export default function AppRouter() {
         <Route path="/faq" element={<FAQ />} />
         <Route path="/serviceProviderProfile" element={<ProviderProfile />} />
         <Route path="/clientProfile" element={<ClientProfile />} />
-        <Route path="*" element={<h1>404 Not Found</h1>} />
       </Routes>
     </BrowserRouter>
   );
