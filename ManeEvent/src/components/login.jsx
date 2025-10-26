@@ -6,6 +6,8 @@ import FAQ from "./faq";
 import { useUser } from "./context/Authorization";
 import React, { useRef, useState } from "react";
 import Supabase from "../backend/supabase/supabaseClient";
+import CheckHeader from "./checkHeader";
+
 const Login = () => {
   const email = useRef(null);
   const password = useRef(null);
@@ -59,7 +61,12 @@ const Login = () => {
   };
 
   return (
+
     <>
+  
+      {/* <CheckHeader /> */}
+      <CheckHeader />
+
       <div className="card container bg-white flex flex-col items-center justify-center min-h-screen">
         <img
           src={logo}

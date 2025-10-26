@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 //import { userState } from "react";
-import ClientHeader from "./ClientHeader";
+import ClientHeader from "../clientHeader";
 import Supabase from "../../backend/supabase/supabaseClient";
 import { useUser } from "../context/Authorization"; //passed from the authentication user form supabase
 import Dashboard from "./dashboard";
@@ -20,9 +20,12 @@ const Home = () => {
   if (role === "CLIENT") {
     header = <ClientHeader />;
   }
-  if (role === "PROVIDER") {
+  else if (role === "PROVIDER") {
     header = <ProviderHeader />;
   } //dynamically decides which header to load based on role form registering.
+  else {
+    header = <Header />;
+  } //if there no role, then it is a public user
 
   useEffect(() => {
     if (user) {
